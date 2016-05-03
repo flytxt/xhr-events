@@ -2,6 +2,11 @@
 
 (function(document) {
 
+  var xhrEventsResolve;
+  document.xhrEventsPromise = new Promise(function(resolve) {
+    xhrEventsResolve = resolve;
+  });
+
   var ironRequestInterceptor = function() {
     var ironRequest = document.createElement('iron-request');
     var proto = Object.getPrototypeOf(ironRequest);
@@ -30,6 +35,7 @@
         }
       }));
     };
+    xhrEventsResolve();
   };
 
   window.addEventListener('WebComponentsReady', ironRequestInterceptor);
