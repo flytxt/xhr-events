@@ -31,7 +31,9 @@
       var succeeded = this.get('succeeded');
       document.dispatchEvent(new CustomEvent(succeeded ? 'xhr-response' : 'xhr-error', {
         detail: {
-          request: this
+          request: this,
+          options: arguments[0]
+          
         }
       }));
     };

@@ -1,6 +1,6 @@
 {
   "name": "xhr-events",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An interceptor for Polymer's iron-request element that generates events on document object.",
   "keywords": [
     "xhr",
